@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/** {
+    border: dotted 1px blue;
+}*/
+
+body {
+    background-color: #ffffff;
+    color: #353866;
+    cursor: default;
+    /*font-family: Roboto, sans-serif;*/
+    font-family: 'Helvetica Neue', Helvetica, sans-serif
+}
+div img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.loading {
+  height: 20em;
+}
+.wrapper> a:link, .wrapper> a:hover, .wrapper> a:active, .wrapper> a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+.wrapper {
+    max-width: 960px;
+    margin: auto;
+    /*padding-top: 50px;*/
+}
+.top-bar {
+    display: inline-flex;
+    max-width: 960px;
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+}
+.main-logo {
+    flex: 2;
+    align-self: center;
+    text-align: center;
+    font-size: 1.5em;
+}
+.online {
+    background-color: #d5c8ea;
+}
+.offline {
+    background-color: #efeef1;
+}
+.item {
+    margin: 3px 0;
+    padding: 10px 0;
+}
+.gameIco {
+    font-size: 1.5em;
+    text-align: center;
+    flex-basis: 3em;
+    align-self: center;
+}
+.selector {
+    display: inline-block;
+    padding-top: 0.4em;
+    font-weight: bold;
+    min-width: 5em;
+    text-align: center;
+    height: 2em;
+}
+.highlight {
+    background-color: #6441a4;
+    color: white;
+}
+.logo {
+    text-align: center;
+    flex-basis: 10em;
+    justify-content: center;
+    align-self: center;
+}
+.selectors {
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 1em;
+    cursor: default;
+    align-self: flex-end;
+}
+.channels {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    cursor: pointer;
+    /*z-index: 99;*/
+}
+.channel {
+    color: #433f4a;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    border-radius: 5px;
+    /*z-index: 999;*/
+}
+.channels :hover {
+    background-color: #6441a4;
+    color: white;
+    transition-duration: 0.2s;
+}
+.channel :hover {
+    transition-duration: 0.4s;
+}
+.chan-name {
+    display: block;
+    text-align: left;
+    flex: 2;
+}
+.followers {
+  font-size: 0.8em;
+  padding-top: 0.5em;
+}
+.name {
+    font-weight: bold;
+}
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+footer a {
+    color: default;
+}
+@media (min-resolution: 1.5dppx) {
+    .logo {
+        flex-basis: 0;
+        padding-right: 1em;
+        padding-left: 0.4em;
+    }
+    .gameIco {
+        font-size: 1.5em;
+        text-align: center;
+        flex-basis: 0;
+        padding-right: 0.5em;
+        padding-left: 0.4em;
+    }
+    div img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    .selectors {
+        text-align: center;
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+    }
+    .top-bar {
+        display: flex;
+        flex-direction: column;
+        max-width: 960px;
+        width: 100%;
+        margin: auto;
+    }
+    .main-logo {
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        font-size: 1em;
+    }
+}
