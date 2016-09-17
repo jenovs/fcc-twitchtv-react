@@ -1,168 +1,132 @@
-* {
+/** {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     outline: none;
-}
+}*/
 
 /** {
     border: dotted 1px blue;
 }*/
 
 body {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #353866;
     cursor: default;
     /*font-family: Roboto, sans-serif;*/
-    font-family: 'Helvetica Neue', Helvetica, sans-serif
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    ::-webkit-scrollbar: none;
 }
-div img {
+
+::-webkit-scrollbar {
+  display: none;
+  }
+/*div img {
     border-radius: 50%;
     width: 50px;
     height: 50px;
+}*/
+.img-div {
+  height: 50px;
+  border-radius: 5px;
 }
-.loading {
-  height: 20em;
+.container {
+  max-width: 960px;
+  justify-content: center;
+  align-items: center;
 }
-.wrapper> a:link, .wrapper> a:hover, .wrapper> a:active, .wrapper> a:visited {
-    text-decoration: none;
-    color: #000000;
+.filter {
+  width: 10rem;
 }
-.wrapper {
-    max-width: 960px;
-    margin: auto;
-    /*padding-top: 50px;*/
+.filter-div {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
 }
-.top-bar {
-    display: inline-flex;
-    max-width: 960px;
-    width: 100%;
-    margin: auto;
-    justify-content: space-between;
+.img-logo {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
 }
-.main-logo {
-    flex: 2;
-    align-self: center;
-    text-align: center;
-    font-size: 1.5em;
+.no-channels-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+.search-form {
+  text-align: center;
+}
+.text-div {
+  width: 80%;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid #353866;
+  border-radius: 5px;
+}
+.btn-delete {
+  height: 4rem;
+  width: 4rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: darkred;
+  /*padding-top: 2rem;*/
+}
+.btn-delete:hover {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.no-exist {
+  background-color: #ccc;
+}
+.canClick {
+  cursor: pointer;
+  /*flex-grow: 2;*/
 }
 .online {
-    background-color: #d5c8ea;
+  background-color: lightgreen;
 }
 .offline {
-    background-color: #efeef1;
+
+}
+.title {
+  text-align: center;
 }
 .item {
-    margin: 3px 0;
-    padding: 10px 0;
+  background-color: #fff;
+  /*display: inline-flex;*/
+  width: 100%;
+  justify-content: center;
+  align-self: center;
 }
-.gameIco {
-    font-size: 1.5em;
-    text-align: center;
-    flex-basis: 3em;
-    align-self: center;
+.chan-title {
+  font-weight: bold;
 }
-.selector {
-    display: inline-block;
-    padding-top: 0.4em;
-    font-weight: bold;
-    min-width: 5em;
-    text-align: center;
-    height: 2em;
+.inactive {
+  color: gray;
 }
-.highlight {
-    background-color: #6441a4;
-    color: white;
+.panel {
+  width: 1000px;
 }
-.logo {
-    text-align: center;
-    flex-basis: 10em;
-    justify-content: center;
-    align-self: center;
+.preview-img {
+  height: 90px;
+  width: 160px;
 }
-.selectors {
-    text-align: right;
-    margin-top: 30px;
-    margin-bottom: 1em;
-    cursor: default;
-    align-self: flex-end;
-}
-.channels {
-    width: 100%;
-    max-width: 960px;
-    margin: auto;
-    cursor: pointer;
-    /*z-index: 99;*/
-}
-.channel {
-    color: #433f4a;
-    display: flex;
-    flex-direction: row;
-    /*justify-content: space-between;*/
-    border-radius: 5px;
-    /*z-index: 999;*/
-}
-.channels :hover {
-    background-color: #6441a4;
-    color: white;
-    transition-duration: 0.2s;
-}
-.channel :hover {
-    transition-duration: 0.4s;
-}
-.chan-name {
-    display: block;
-    text-align: left;
-    flex: 2;
-}
-.followers {
-  font-size: 0.8em;
-  padding-top: 0.5em;
-}
-.name {
-    font-weight: bold;
-}
-footer {
-    margin-top: 50px;
-    text-align: center;
-}
-footer a {
-    color: default;
-}
-@media (min-resolution: 1.5dppx) {
-    .logo {
-        flex-basis: 0;
-        padding-right: 1em;
-        padding-left: 0.4em;
-    }
-    .gameIco {
-        font-size: 1.5em;
-        text-align: center;
-        flex-basis: 0;
-        padding-right: 0.5em;
-        padding-left: 0.4em;
-    }
-    div img {
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-    }
-    .selectors {
-        text-align: center;
-        margin-top: 0.2em;
-        margin-bottom: 0.2em;
-    }
-    .top-bar {
-        display: flex;
-        flex-direction: column;
-        max-width: 960px;
-        width: 100%;
-        margin: auto;
-    }
-    .main-logo {
-        flex: 1;
-        align-self: center;
-        text-align: center;
-        font-size: 1em;
-    }
+.wrapper {
+  padding: 1rem 3rem;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
 }

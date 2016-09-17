@@ -1,0 +1,41 @@
+{
+  "name": "fcc-twitchtv-react",
+  "version": "1.0.0",
+  "description": "Use the TwitchTV JSON API --- https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenovs/fcc-twitchtv-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenovs/fcc-twitchtv-react/issues"
+  },
+  "homepage": "https://github.com/jenovs/fcc-twitchtv-react#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "moment": "^2.15.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "axios": "^0.14.0",
+    "react": "^15.3.1",
+    "react-addons-css-transition-group": "^15.3.1",
+    "react-bootstrap": "^0.30.3",
+    "react-dom": "^15.3.1",
+    "react-flip-move": "^2.4.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0"
+  }
+}
