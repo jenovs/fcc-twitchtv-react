@@ -89,7 +89,9 @@
 	  channels: _channelsReducer2.default
 	});
 	
-	var store = (0, _redux.createStore)(reducers, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), window.devToolsExtension && window.devToolsExtension()));
+	var store = (0, _redux.createStore)(reducers, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), window.devToolsExtension ? window.devToolsExtension() : function (noop) {
+	  return noop;
+	}));
 	
 	// fetchData();
 	store.subscribe(function () {

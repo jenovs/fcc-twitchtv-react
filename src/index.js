@@ -15,7 +15,7 @@ const reducers = combineReducers({
   channels: channelsReducer
 })
 
-let store = createStore(reducers, compose(applyMiddleware(thunk), window.devToolsExtension && window.devToolsExtension()));
+let store = createStore(reducers, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : noop => noop));
 
 // fetchData();
 store.subscribe(() => {
