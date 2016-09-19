@@ -1,0 +1,29 @@
+/** {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}*/
+
+/** {
+    border: dotted 1px blue;
+}*/
+
+body {
+    background-color: #fff;
+    color: $color-violet;
+    cursor: default;
+    /*font-family: Roboto, sans-serif;*/
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  }
+
+.title {
+  text-align: center;
+}

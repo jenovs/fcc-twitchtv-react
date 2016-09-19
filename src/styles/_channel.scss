@@ -1,0 +1,45 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid $color-violet;
+  border-radius: 5px;
+}
+.no-exist {
+  background-color: #ccc;
+}
+.no-exist * {
+  cursor: default;
+}
+.online {
+  background-color: lightgreen;
+}
+
+.img-div {
+  height: 50px;
+  border-radius: 5px;
+}
+.text-div {
+  width: 80%;
+}
+.canClick {
+  cursor: pointer;
+}
+.chan-title {
+  font-weight: bold;
+}
+.btn-delete {
+  height: 4rem;
+  width: 4rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: darkred;
+}
+.btn-delete:hover {
+  border: 1px solid gray;
+  border-radius: 5px;
+}

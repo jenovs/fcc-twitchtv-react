@@ -3,40 +3,51 @@ const initialChannels = ["freecodecamp", "monstercat", "ogamingsc2", "comster404
 const initialState = {
   names: initialChannels,
   channels: [],
-  filter: 'all'
+  filter: 'all',
+  suggestions: []
 }
 
 const channelsReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case 'CHANGE_FILTER':
-      // console.log(state.channels);
-      const filteredChannels = filterChannels(state.channels, action.payload)
-      // console.log('filteredChannels', filteredChannels);
+      const filteredChannels = filterChannels(state.channels, action.payload);
       return { ...state, filter: action.payload, filteredChannels: filteredChannels};
       break;
-    // case 'UPDATE_CHANNELS':
-    //   return {...state, filteredChannels: action.payload.filteredChannels};
-    // // case 'UPDATE_CHANNELS':
+
     case 'UPDATE_CHANNEL':
       return {...state, channels: [...state.channels, action.payload.data]};
       break;
+
     case 'INIT_STATE':
-      return {...state, names: action.payload.names, filter: action.payload.filter}
+      return {...state, names: action.payload.names, filter: action.payload.filter};
+      break;
+
     case 'ADD_CHANNEL':
-      console.log('in ADD_CHANNEL', action.payload.data);
       return {...state,
         names: [action.payload.data.name, ...state.names],
-        channels: [action.payload.data, ...state.channels]}
+        channels: [action.payload.data, ...state.channels]};
+        break;
+
+    case 'UPDATE_SUGGESTIONS':
+      return {...state, suggestions: action.payload}
+      break;
+
+    case 'CLEAR_SUGGESTIONS':
+      return {...state, suggestions: []};
+      break;
+
     case 'DELETE_CHANNEL':
-      console.log('in DELETE_CHANNEL');
       return {...state,
         names: state.names.filter(name => name !== action.payload),
         channels: state.channels.filter(channel => channel.name !== action.payload)
       }
-
       break;
+
     case 'FETCHING_DATA':
       return {...state, ...action.payload}
+      break;
+
     default:
       return state;
   }
@@ -56,6 +67,5 @@ function filterChannels (channels, filter) {
     return channels;
   }
 }
-
 
 export default channelsReducer;

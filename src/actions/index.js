@@ -1,8 +1,6 @@
-import { updateChannel as update } from './update'
-import { getFromStorage, searchChannel } from './../api/api'
+import { getFromStorage, searchChannel, update } from './../api/api'
 
 export const setFilter = (filter) => {
-  console.log('Filter clicked', filter);
   const newFilter = changeFilter(filter)
   return {
     type: 'CHANGE_FILTER',
@@ -32,10 +30,40 @@ export const initState = (data) => {
 }
 
 export const addChannel = (data) => {
-  console.log(data);
   return {
     type: 'ADD_CHANNEL',
     payload: {data}
+  }
+}
+
+export const updateSuggestions = (data) => {
+  return {
+    type: 'UPDATE_SUGGESTIONS',
+    payload: data
+  }
+}
+
+export const clearSuggestions = () => {
+  return {
+    type: 'CLEAR_SUGGESTIONS'
+  }
+}
+
+export const handleDelete = (name) => {
+  return {
+    type: 'DELETE_CHANNEL',
+    payload: name
+  }
+}
+
+export const getSuggestionsAction = (text) => {
+  return (dispatch, getState) => {
+    searchChannel(text).then(res => {
+      const result = res.data.channels.map(item => {
+        return item.display_name;
+      })
+      dispatch(updateSuggestions(result));
+    })
   }
 }
 
@@ -64,22 +92,18 @@ export const searchNewChannel = (text) => {
       let name = res.data.channels[0].name;
       update(name).then(res => {
         let filter = getState().channels.filter;
-        console.log('filter', filter);
-        dispatch(addChannel(res));
-        dispatch(setSameFilter('all'));
-        setTimeout(() => {
-          dispatch(setSameFilter(filter));
-        }, 1000)
-
+        let currentNames = getState().channels.names;
+        if (currentNames.indexOf(res.name) === -1) {
+          dispatch(setSameFilter('all'));
+          setTimeout(() => {
+            dispatch(addChannel(res));
+            setTimeout(() => {
+              dispatch(setSameFilter(filter));
+            }, 500)
+          }, 500)
+        }
       })
     })
-  }
-}
-
-export const handleDelete = (name) => {
-  return {
-    type: 'DELETE_CHANNEL',
-    payload: name
   }
 }
 

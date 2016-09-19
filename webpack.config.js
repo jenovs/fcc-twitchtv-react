@@ -36,7 +36,7 @@ module.exports = {
       // './src/api'
     ],
     alias: {
-      applicationStyles: 'src/styles/app.scss'
+      // applicationStyles: './styles/index.css'
       // actions: 'src/actions/actions.js',
       // reducers: 'src/reducers/reducers.js',
       // configureStore: 'src/store/configureStore.js'
@@ -60,23 +60,10 @@ module.exports = {
         // folders not to process
         exclude: /(node_modules)/
       },
-        {
-          test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-          loader: 'url?limit=10000&mimetype=application/font-woff'
-        }, {
-          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-          loader: 'url?limit=10000&mimetype=application/octet-stream'
-        }, {
-          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-          loader: 'file'
-        }, {
-          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-          loader: 'url?limit=10000&mimetype=image/svg+xml'
-        },
-      // {
-      //   test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      //   loader: 'file'
-      // },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      },
       {
         test: /\.css$/,
         loader: "style-loader!css-loader"

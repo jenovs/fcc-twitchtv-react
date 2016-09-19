@@ -9,6 +9,8 @@ import channelsReducer from './reducers/channelsReducer';
 import { fetchData, initState } from './actions/index'
 import { saveToStorage, getFromStorage } from './api/api'
 
+require('./styles/index.scss');
+
 const reducers = combineReducers({
   channels: channelsReducer
 })
