@@ -17,10 +17,8 @@ const reducers = combineReducers({
 
 let store = createStore(reducers, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : noop => noop));
 
-// fetchData();
 store.subscribe(() => {
   let state = store.getState();
-  // console.log('state', state);
   saveToStorage({names: state.channels.names, filter: state.channels.filter})
 })
 
@@ -31,7 +29,6 @@ if (initialData) {
 }
 
 store.dispatch(fetchData());
-
 
 ReactDOM.render(
   <Provider store={store}>

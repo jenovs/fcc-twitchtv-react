@@ -93,10 +93,8 @@
 	  return noop;
 	}));
 	
-	// fetchData();
 	store.subscribe(function () {
 	  var state = store.getState();
-	  // console.log('state', state);
 	  (0, _api.saveToStorage)({ names: state.channels.names, filter: state.channels.filter });
 	});
 	
@@ -23183,6 +23181,16 @@
 	          { className: 'title' },
 	          'TwitchTV Viewer'
 	        ),
+	        _react2.default.createElement(
+	          'h4',
+	          { className: 'git-link' },
+	          'Source code on ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'https://github.com/jenovs/fcc-twitchtv-react', target: '_blank', rel: 'noopener noreferrer' },
+	            'GitHub'
+	          )
+	        ),
 	        _react2.default.createElement(_Search2.default, { handleSearch: this.handleSearch.bind(this) }),
 	        _react2.default.createElement(_Filter2.default, null),
 	        _react2.default.createElement(_ChannelList2.default, null)
@@ -23342,15 +23350,6 @@
 	
 	  _createClass(Channel, [{
 	    key: 'openChannel',
-	
-	
-	    // constructor(props) {
-	    //   super(props);
-	    //   this.state = {
-	    //     stream: this.props.data.stream,
-	    //   }
-	    // }
-	
 	    value: function openChannel() {
 	      if (!this.props.channel.message) {
 	        window.open('http://www.twitch.com/' + this.props.channel.name);
@@ -23365,8 +23364,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	
-	      // console.log('Channel, props', this.props);
 	      var _props$channel = this.props.channel;
 	      var display_name = _props$channel.display_name;
 	      var name = _props$channel.name;
@@ -23385,8 +23382,8 @@
 	        { className: classes },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'img-div' },
-	          _react2.default.createElement('img', { src: logo, width: '50px', height: '50px' })
+	          null,
+	          _react2.default.createElement('img', { className: 'logo', src: logo, width: '50px', height: '50px' })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -46484,7 +46481,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/** {\n    padding: 0;\n    margin: 0;\n    box-sizing: border-box;\n    outline: none;\n}*/\n/** {\n    border: dotted 1px blue;\n}*/\nbody {\n  background-color: #fff;\n  color: #353866;\n  cursor: default;\n  /*font-family: Roboto, sans-serif;*/\n  font-family: 'Helvetica Neue', Helvetica, sans-serif;\n  -moz-user-select: none;\n  -webkit-user-select: none;\n  -ms-user-select: none; }\n\n::-webkit-scrollbar {\n  display: none; }\n\n.title {\n  text-align: center; }\n\n.listItem {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background-color: #eee;\n  margin: 1rem;\n  padding: 0.5rem 2rem;\n  border: 2px solid #353866;\n  border-radius: 5px; }\n\n.no-exist {\n  background-color: #ccc; }\n\n.no-exist * {\n  cursor: default; }\n\n.online {\n  background-color: lightgreen; }\n\n.img-div {\n  height: 50px;\n  border-radius: 5px; }\n\n.text-div {\n  width: 80%; }\n\n.canClick {\n  cursor: pointer; }\n\n.chan-title {\n  font-weight: bold; }\n\n.btn-delete {\n  height: 4rem;\n  width: 4rem;\n  background-color: transparent;\n  border: none;\n  outline: none;\n  color: darkred; }\n\n.btn-delete:hover {\n  border: 1px solid gray;\n  border-radius: 5px; }\n\n.container {\n  max-width: 960px;\n  justify-content: center;\n  align-items: center; }\n\n.filter {\n  width: 10rem; }\n\n.filter-div {\n  width: 30%;\n  text-align: center;\n  margin: auto;\n  cursor: pointer; }\n\n.search-form {\n  text-align: center; }\n", ""]);
+	exports.push([module.id, "/** {\n    padding: 0;\n    margin: 0;\n    box-sizing: border-box;\n    outline: none;\n}*/\n/** {\n    border: dotted 1px blue;\n}*/\nbody {\n  background-color: #fff;\n  color: #353866;\n  cursor: default;\n  /*font-family: Roboto, sans-serif;*/\n  font-family: 'Helvetica Neue', Helvetica, sans-serif;\n  -moz-user-select: none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  text-align: center; }\n\n::-webkit-scrollbar {\n  display: none; }\n\n.title {\n  text-align: center; }\n\n.listItem {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background-color: #eee;\n  margin: 1rem;\n  padding: 0.5rem 2rem;\n  border: 2px solid #353866;\n  border-radius: 5px; }\n\n.no-exist {\n  background-color: #ccc; }\n  .no-exist * {\n    cursor: default; }\n\n.online {\n  background-color: lightgreen; }\n\n.logo {\n  border-radius: 7px; }\n\n.text-div {\n  width: 80%;\n  padding-left: 1rem; }\n\n.canClick {\n  cursor: pointer; }\n\n.chan-title {\n  font-weight: bold; }\n\n.btn-delete {\n  height: 4rem;\n  width: 4rem;\n  background-color: transparent;\n  border: none;\n  outline: none;\n  color: darkred; }\n  .btn-delete :hover {\n    border: 1px solid gray;\n    border-radius: 5px; }\n\n.container {\n  max-width: 960px;\n  justify-content: center;\n  align-items: center;\n  text-align: left; }\n\n.filter {\n  width: 10rem; }\n\n.filter-div {\n  width: 30%;\n  text-align: center;\n  margin: auto;\n  cursor: pointer; }\n\n.search-form {\n  text-align: center; }\n", ""]);
 	
 	// exports
 

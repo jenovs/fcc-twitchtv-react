@@ -16,7 +16,6 @@ class Filter extends React.Component {
 }
 
 function mapStateToProps(state) {
-  // console.log(state);
   return {
     filter: state.channels.filter
   }

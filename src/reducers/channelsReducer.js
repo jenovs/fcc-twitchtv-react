@@ -54,7 +54,6 @@ const channelsReducer = (state = initialState, action) => {
 }
 
 function filterChannels (channels, filter) {
-  console.log('in filterChannels', channels, filter);
   if (filter === 'online') {
     return channels.filter(ch => {
       return (ch.stream && ch.stream !== 'offline')

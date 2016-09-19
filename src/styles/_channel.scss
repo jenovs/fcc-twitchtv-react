@@ -10,20 +10,19 @@
 }
 .no-exist {
   background-color: #ccc;
-}
-.no-exist * {
-  cursor: default;
+  * {
+    cursor: default;
+  }
 }
 .online {
-  background-color: lightgreen;
+  background-color: $color-green;
 }
-
-.img-div {
-  height: 50px;
-  border-radius: 5px;
+.logo {
+  border-radius: 7px;
 }
 .text-div {
   width: 80%;
+  padding-left: 1rem;
 }
 .canClick {
   cursor: pointer;
@@ -38,8 +37,8 @@
   border: none;
   outline: none;
   color: darkred;
-}
-.btn-delete:hover {
-  border: 1px solid gray;
-  border-radius: 5px;
+  :hover {
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
 }

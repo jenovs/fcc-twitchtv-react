@@ -18,6 +18,7 @@ class App extends React.Component {
     return (
       <div>
         <h1 className='title'>TwitchTV Viewer</h1>
+        <h4 className='git-link'>Source code on <a href="https://github.com/jenovs/fcc-twitchtv-react" target="_blank" rel="noopener noreferrer">GitHub</a></h4>
         <Search handleSearch={this.handleSearch.bind(this)}/>
         <Filter/>
         <ChannelList/>
