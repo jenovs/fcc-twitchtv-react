@@ -1,12 +1,27 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import Channel from 'Channel';
 import FlipMove from 'react-flip-move';
+import { handleDelete } from './../actions/index'
 
 class ChannelList extends React.Component {
 
   getChannelList() {
-    return this.props.channels.map((channel) => {
-      return <Channel key={channel.id} data={channel} handleDelete={this.handleDelete.bind(this)}/>
+    const { filter } = this.props;
+    return this.props.channels
+      .filter((channel) => {
+        if (filter === 'online') {
+          return (channel.stream !== 'offline' && channel.stream !== undefined)
+        } else if (filter === 'offline') {
+          return channel.stream === 'offline'
+        } else {
+          return true
+        }
+      })
+      .map((channel, i) => {
+        return <Channel key={channel.id ? channel.id : i} channel={channel} />
     });
   }
 
@@ -15,21 +30,28 @@ class ChannelList extends React.Component {
   }
 
   render() {
-    console.log('ChannelList props', this.props);
     let channelList = this.getChannelList();
-    if (!this.props.init && this.props.channels.length === 0) {
-      channelList = <div className='no-channels-div'><h2 key='0' className='info-text'>No channels to show</h2></div>
-      console.log(channelList);
-    }
-    console.log(channelList);
     return(
       <div className='container'>
         <FlipMove enterAnimation="accordionVertical" leaveAnimation="accordionVertical">
-          {channelList}
+          {this.getChannelList()}
         </FlipMove>
       </div>
     )
   }
 }
 
-export default ChannelList;
+function mapStateToProps(state) {
+  return {
+    channels: state.channels.channels,
+    names: state.channels.names,
+    filter: state.channels.filter
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ handleDelete }, dispatch)
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);

@@ -88,12 +88,16 @@ body {
   border: 1px solid gray;
   border-radius: 5px;
 }
-.no-exist {
-  background-color: #ccc;
-}
+
 .canClick {
   cursor: pointer;
   /*flex-grow: 2;*/
+}
+.no-exist {
+  background-color: #ccc;
+}
+.no-exist * {
+  cursor: default;
 }
 .online {
   background-color: lightgreen;
